@@ -1,0 +1,58 @@
+<div class="titleContent">
+    <h2 mat-dialog-title>détail d'étudiant</h2>
+</div>
+
+<mat-dialog-content>
+   <div>
+       <div class="detailRow">
+           <div class="titleDetail">Titre :</div> {{ student.title }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">Nom :</div> {{ student.first_name }}  {{ student.last_name }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">Promotion :</div> {{ student.promotion }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">Genre :</div> {{ student.gender }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">Né(e) le :</div> {{ student.birth }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">Email :</div> {{ student.email }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">Rue :</div> {{ student.street_name }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">Ville :</div> {{ student.city }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">Pays :</div> {{ student.country }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">Entreprise :</div> {{ student.company }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">Couleur préférée :</div> {{ student.company }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">Adresse :</div> {{ student.street_address }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">Carrière envisagée :</div> {{ student.planned_career }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">Université :</div> {{ student.university }}
+       </div>
+       <div class="detailRow">
+           <div class="titleDetail">LinkedIn :</div> {{ student.linkedin }}
+       </div>
+
+   </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button class="mat-raised-button"(click)="close()" color="accent">Fermer</button>
+</mat-dialog-actions>

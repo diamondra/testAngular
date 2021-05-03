@@ -1,0 +1,46 @@
+.wrapper {
+    height: 600px;
+    width: 100%;
+    overflow: auto;
+}
+
+table {
+    width: 1000px;
+    table-layout: fixed;
+}
+
+
+.col-sm {
+    height:50px;
+}
+
+.mat-header-cell{
+    font-weight: bold;
+    font-size: 18px;
+    color: #58ad89;
+    font-family: cursive;
+}
+
+.clickDetail{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+.title h1{
+    font-weight: bold;
+    text-align: center;
+    color: #899691;
+    text-transform: uppercase;
+}
+
+.recherche{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonExport{
+    background: khaki;
+}

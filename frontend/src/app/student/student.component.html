@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="title">
+        <h1>liste des étudiants</h1>
+    </div>
+
+    <div class="recherche">
+        <div>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+            Rechercher :
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Fitre">
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-raised-button class="buttonExport" (click)="exporter.exportTable('xlsx', {fileName:'exportEtudiants', sheet: 'sheet_name', Props: {Author: 'Diams'}})">Exporter la liste</button>
+        </div>
+    </div>
+
+    <cdk-virtual-scroll-viewport tvsItemSize class="wrapper mat-elevation-z2">
+        <table mat-table [dataSource]="dataSource" matTableExporter #exporter="matTableExporter">
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef class="col-sm"> Titre </th>
+                <td mat-cell *matCellDef="let row" class="col-sm"> {{row.title}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="first_name">
+                <th mat-header-cell *matHeaderCellDef class="col-sm">Nom </th>
+                <td mat-cell *matCellDef="let row; let i = index" class="col-sm clickDetail" (click)="openDialog(i)"> {{row.first_name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="last_name">
+                <th mat-header-cell *matHeaderCellDef class="col-sm"> Prénom </th>
+                <td mat-cell *matCellDef="let row; let i = index" class="col-sm clickDetail" (click)="openDialog(i)"> {{row.last_name}} </td>
+            </ng-container>
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef class="col-sm">Email </th>
+                <td mat-cell *matCellDef="let row" class="col-sm"> {{row.email}} </td>
+            </ng-container>
+
+        </table>
+    </cdk-virtual-scroll-viewport>
+    <mat-paginator [pageSizeOptions]="[15, 20, 25]" showFirstLastButtons></mat-paginator>
+</div>

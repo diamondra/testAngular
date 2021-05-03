@@ -1,0 +1,26 @@
+.titleDetail{
+    width: 150px;
+    font-weight: bold;
+    color: #58ad89;
+    font-family: sans-serif;
+}
+
+.detailRow{
+    display: flex;
+    height: 30px;
+}
+
+.mat-raised-button{
+    background-color : #a0a0a0;
+}
+
+h2{
+    text-align: center;
+    color: #899691;
+    text-transform: uppercase;
+}
+
+.titleContent{
+    border-bottom: 1px solid #899691;
+    margin-bottom: 20px;
+}
